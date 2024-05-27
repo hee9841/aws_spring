@@ -19,7 +19,11 @@ repositories {
 
 // for Junit 5
 test {
-    useJUnitPlatform()
+//    useJUnitPlatform()
+    useJUnitPlatform {
+        includeEngines 'junit-vintage'
+        // excludeEngines 'junit-jupiter'
+    }
 }
 
 dependencies {
@@ -30,6 +34,11 @@ dependencies {
      * */
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation 'junit:junit:4.13.1'
 }
 
 
