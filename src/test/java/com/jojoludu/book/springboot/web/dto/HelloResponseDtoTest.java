@@ -2,7 +2,7 @@ package com.jojoludu.book.springboot.web.dto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 
 public class HelloResponseDtoTest {
@@ -22,6 +22,7 @@ public class HelloResponseDtoTest {
         //1. CoreMatchers와 달리 추가적으로 라이브러리가 필요 없음
         //      junit의 assertThat을 사용시 is()와 같은 CoreMatchers 라이브러리가 필요
         //2. 자동완성이 확실히게 지원
+
         assertThat(dto.getName()).isEqualTo(name);
         assertThat(dto.getAmount()).isEqualTo(amount);
     }
