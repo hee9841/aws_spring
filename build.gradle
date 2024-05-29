@@ -55,6 +55,11 @@ dependencies {
     //mustache
     implementation('org.springframework.boot:spring-boot-starter-mustache')
 
+    //securilty, oauth
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    implementation('org.springframework.session:spring-session-jdbc')
+    testImplementation("org.springframework.security:spring-security-test")
+
 }
 
 
