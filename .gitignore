@@ -9,3 +9,5 @@ settings.gradle
 /out
 
 build
+
+/src/main/resources/applicatin-oauth.properties
