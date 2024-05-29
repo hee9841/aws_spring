@@ -18,11 +18,11 @@
 				</tr>
 				</thead>
 				<tbody id="tbody">
-<!--				{{#posts}}는 for라고 생각하면 됨-->
+<!--				#posts}}는 for라고 생각하면 됨-->
 				{{#posts}}
 					<tr>
 						<td>{{id}}</td>
-						<td>{{title}}</td>
+						<td><a href="/posts/update/{{id}}">{{title}}</a></td>
 						<td>{{author}}</td>
 						<td>{{modifiedDate}}</td>
 					</tr>
