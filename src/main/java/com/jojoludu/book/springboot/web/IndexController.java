@@ -27,14 +27,13 @@ public class IndexController {
          * **/
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
-
         /**
          * 2.
          * 세션에 저장된 값이 있을 때만 모델에 등록
          *
          * */
         if (user != null) {
-            model.addAttribute("userName", user.getName());
+            model.addAttribute("uName", user.getName());
         }
         return "index";
     }
