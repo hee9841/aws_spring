@@ -56,7 +56,7 @@ public class PostsRepositoryTest {
     }
 
     @Test
-    void BaseTimeEntity_등록() {
+    void BaseTimeEntity_등록() throws Exception {
         //given
 //        LocalDateTime now = LocalDateTime.of(2024, 5, 28, 21, 14, 0);
         LocalDateTime now = LocalDateTime.now();
@@ -65,6 +65,7 @@ public class PostsRepositoryTest {
             .content("content")
             .author("author")
             .build());
+        Thread.sleep(1000);
         //when
         List<Posts> postsList = postsRepository.findAll();
 
