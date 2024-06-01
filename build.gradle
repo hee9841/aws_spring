@@ -19,11 +19,7 @@ repositories {
 
 // for Junit 5
 test {
-//    useJUnitPlatform()
-    useJUnitPlatform {
-//        includeEngines 'junit-vintage'
-         excludeEngines 'junit-jupiter'
-    }
+    useJUnitPlatform()
 }
 
 dependencies {
