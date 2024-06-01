@@ -11,3 +11,5 @@ settings.gradle
 build
 
 /src/main/resources/application-oauth.properties
+
+/src/test/resources/application.properties
