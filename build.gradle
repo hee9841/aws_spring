@@ -56,6 +56,9 @@ dependencies {
     implementation('org.springframework.session:spring-session-jdbc')
     testImplementation("org.springframework.security:spring-security-test")
 
+    //test for security
+    testImplementation("org.springframework.security:spring-security-test")
+
 }
 
 
