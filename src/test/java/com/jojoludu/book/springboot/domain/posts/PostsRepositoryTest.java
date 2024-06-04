@@ -60,12 +60,12 @@ public class PostsRepositoryTest {
         //given
 //        LocalDateTime now = LocalDateTime.of(2024, 5, 28, 21, 14, 0);
         LocalDateTime now = LocalDateTime.now();
+        Thread.sleep(1000);
         postsRepository.save(Posts.builder()
             .title("title")
             .content("content")
             .author("author")
             .build());
-        Thread.sleep(1000);
         //when
         List<Posts> postsList = postsRepository.findAll();
 
