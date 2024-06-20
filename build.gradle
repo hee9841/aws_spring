@@ -32,10 +32,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-mustache')
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-//    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-//        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-//    }
-//    testImplementation 'junit:junit:4.13.1'
 
 
     //lombok
@@ -47,6 +43,7 @@ dependencies {
     //Spring Data Jpa
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('com.h2database:h2')
+    implementation("org.mariadb.jdbc:mariadb-java-client")
 
     //mustache
     implementation('org.springframework.boot:spring-boot-starter-mustache')
@@ -58,6 +55,7 @@ dependencies {
 
     //test for security
     testImplementation("org.springframework.security:spring-security-test")
+
 
 }
 
