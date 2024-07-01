@@ -19,7 +19,7 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r springboot2-web
+  - zip -r springboot2-web *
   - mkdir -p deploy
   - mv springboot2-web.zip deploy/springboot2-web.zip
 
