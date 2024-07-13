@@ -2,6 +2,7 @@ package com.jojoludu.book.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 
 
 @SpringBootApplication
@@ -12,6 +13,10 @@ public class Application {
     public static void main(String[] args) {
         //SpringApplication.run으로 내장 WAS 실행
         //내장 WAS를 사용하는 것을 권장 -> 언제나 같은 환경에서 스프링 부트를 배포할 수 있어서
-        SpringApplication.run(Application.class, args);
+
+        //설정한 값을 pid commend로 사용하기 위해 main을 수정
+        SpringApplication application = new SpringApplication(Application.class);
+        application.addListeners(new ApplicationPidFileWriter());
+        application.run(args);
     }
 }

@@ -29,7 +29,7 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
 
-    - name: Grant excute permission for gradlew
+    - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
       shell: bash
       
@@ -40,7 +40,7 @@ jobs:
       run: ./gradlew clean build -x test
       shell: bash
       
-    - name: Get crrent time
+    - name: Get Current time
       uses: josStorer/get-current-time@v2.1.2
       with:
         format: YYYY-MM-DDTHH-mm-ss
@@ -48,6 +48,17 @@ jobs:
 
     - name: Show Current Time
       run:  echo "CurrentTime=${{steps.current-time.outputs.formattedTime}}"
+      shell: bash
+
+    - name: Generate deployment package
+      run: |
+        mkdir -p before-deploy
+        cp scripts/*.sh before-deploy/
+        cp appspec.yml before-deploy/
+        cp build/libs/*.jar before-deploy/
+        cp before-deploy && zip -r before-deploy *
+        cp ../ && mkdir -p deploy
+        mv before-deploy/before-deploy.zip deploy/$PROJECT_NAME.zip
       shell: bash
 
     - name: Make zip file
