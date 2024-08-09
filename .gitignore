@@ -15,5 +15,6 @@ build
 /src/test/resources/application.properties
 /src/main/resources/application-real-db.properties
 
+#!testDirect/*
 !testDirect/*
 testDirect/*.tmp
