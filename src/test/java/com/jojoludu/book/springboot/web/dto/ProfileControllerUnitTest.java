@@ -2,6 +2,7 @@ package com.jojoludu.book.springboot.web.dto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.jojoludu.book.springboot.web.ProfileController;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.env.MockEnvironment;
 
