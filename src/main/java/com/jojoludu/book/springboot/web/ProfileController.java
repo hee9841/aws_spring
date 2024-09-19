@@ -3,12 +3,14 @@ package com.jojoludu.book.springboot.web;
 import java.util.Arrays;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
+@Slf4j
 public class ProfileController {
 
     private final Environment env;
@@ -19,7 +21,7 @@ public class ProfileController {
         List<String> realProfiles = Arrays.asList("real", "real1", "real2");
         String defaultProfile = profiles.isEmpty() ? "default" : profiles.get(0);
 
-
+        log.info("!!!!!!!!!!!!profiles:{}", profiles);
 
         return profiles.stream()
             .filter(realProfiles::contains)
