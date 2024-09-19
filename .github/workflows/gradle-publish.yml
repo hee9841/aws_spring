@@ -1,7 +1,7 @@
 env:
   S3_BUCKET_NAME: joct-springboot-build #버킷 이름
-  PROJECT_NAME: springboot2-web  #프로젝트 이름
-  CODE_DEPLOY_APP_NAME: aws-spring
+  PROJECT_NAME: aws_spring  #프로젝트 이름
+  CODE_DEPLOY_APP_NAME: aws_spring
   CODE_DEPLOY_GROUP_NAME: aws-spring-group
 
 name: deploy
