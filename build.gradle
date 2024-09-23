@@ -56,3 +56,7 @@ dependencies {
     //test for security
     testImplementation("org.springframework.security:spring-security-test")
 }
+
+bootBuildImage{
+    imageName = project.findProperty('imageName') ?: 'coco419/spring-web-study:latest'
+}
