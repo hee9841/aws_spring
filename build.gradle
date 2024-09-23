@@ -55,16 +55,4 @@ dependencies {
 
     //test for security
     testImplementation("org.springframework.security:spring-security-test")
-
-
 }
-
-tasks.bootBuildImage {
-    doFirst {
-        version = imageName.get().substringAfterLast(':', 'Unknown')
-        println "Setting version to: $version"
-    }
-}
-
-
-
