@@ -59,6 +59,12 @@ dependencies {
 
 }
 
+tasks.bootBuildImage {
+    doFirst {
+        version = imageName.get().substringAfterLast(':', 'Unknown')
+        println "Setting version to: $version"
+    }
+}
 
 
 
