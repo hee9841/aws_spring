@@ -3,7 +3,7 @@ name: CD
 on:
   push:
     branches:
-      - main
+      - blue-green
 
 permissions:
   contents: read
@@ -61,18 +61,18 @@ jobs:
           echo "Pushing Docker image with tag: $IMAGE_TAG"
           docker push $REPO:$IMAGE_TAG
 
-      - name: Send command by AWS SSM
-        uses: peterkimzz/aws-ssm-send-command@master
-        id: ssm
-        with:
-          aws-region: ap-northeast-2
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          instance-ids: ${{ secrets.AWS_INSTANCE_ID }}
-          working-directory: ${{ vars.DEPLOY_SCRIPT_PATH }}
-          command: |
-            echo "############# PULL DOCKER IMAGE #############"
-            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-            docker pull ${{ env.REPO }}:${{ env.IMAGE_TAG }}
-            echo "############# RUN DEPLOY SCRIPT #############"
-            sh deploy.sh ${{ env.REPO }} ${{ env.IMAGE_TAG }}
+#      - name: Send command by AWS SSM
+#        uses: peterkimzz/aws-ssm-send-command@master
+#        id: ssm
+#        with:
+#          aws-region: ap-northeast-2
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          instance-ids: ${{ secrets.AWS_INSTANCE_ID }}
+#          working-directory: ${{ vars.DEPLOY_SCRIPT_PATH }}
+#          command: |
+#            echo "############# PULL DOCKER IMAGE #############"
+#            docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+#            docker pull ${{ env.REPO }}:${{ env.IMAGE_TAG }}
+#            echo "############# RUN DEPLOY SCRIPT #############"
+#            sh deploy.sh ${{ env.REPO }} ${{ env.IMAGE_TAG }}
