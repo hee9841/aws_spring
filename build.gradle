@@ -40,6 +40,10 @@ dependencies {
     testImplementation('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')
 
+    //helath check
+    implementation('org.springframework.boot:spring-boot-starter-actuator')
+
+
     //Spring Data Jpa
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('com.h2database:h2')
@@ -57,6 +61,3 @@ dependencies {
     testImplementation("org.springframework.security:spring-security-test")
 }
 
-bootBuildImage{
-    imageName = project.findProperty('imageName') ?: 'coco419/spring-web-study:latest'
-}
