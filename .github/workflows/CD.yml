@@ -71,7 +71,7 @@ jobs:
           instance-ids: ${{ secrets.AWS_INSTANCE_ID }}
           working-directory: ${{ vars.DEPLOY_SCRIPT_PATH }}
           command: |
-            echo "############# PULL DOCKER IMAGE #############"
+            echo "############# PULL DOCKER IMAGE #############" >> mylog.txt
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             docker pull ${{ env.REPO }}:${{ env.IMAGE_TAG }}
             echo "############# RUN DEPLOY SCRIPT #############"
