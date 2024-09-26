@@ -18,7 +18,7 @@ public class ProfileController {
     @GetMapping("/profile")
     public String profile() {
         List<String> profiles = Arrays.asList(env.getActiveProfiles()); // 현재 실행 중인 ActiveProfile을 모두 가져온다
-        List<String> realProfiles = Arrays.asList("real", "real1", "real2");
+        List<String> realProfiles = Arrays.asList("real", "blue", "green");
         String defaultProfile = profiles.isEmpty() ? "default" : profiles.get(0);
 
         log.info("!!!!!!!!!!!!profiles:{}", profiles);
